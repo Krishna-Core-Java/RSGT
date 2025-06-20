@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raising Sun Group Tuition - Expert Coaching for Academic Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': '#004080',
+                        'bright-orange': '#FFA500',
+                        'soft-teal': '#20B2AA',
+                        'light-gray': '#F5F5F5',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(12, 95, 179, 0.8), rgba(12, 95, 179, 0.8)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23004080" width="1200" height="600"/><circle fill="%23FFA500" opacity="0.1" cx="200" cy="150" r="80"/><circle fill="%2320B2AA" opacity="0.1" cx="800" cy="300" r="120"/><circle fill="%23FFA500" opacity="0.1" cx="1000" cy="100" r="60"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="font-roboto">
+
+    <!-- Header -->
+    <header class="bg-deep-blue text-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <nav class="flex items-center justify-between py-4">
+
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <img class="md:h-10 md:w-10 h-9 rounded-full" src="../Image/RSGT_1.png" alt="Error">
+                    <span class="font-poppins font-semibold text-xl">Raising Sun Group</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="R.S.C.HTML"
+                        class="font-roboto text-xl hover:text-soft-teal hover:underline transition-colors duration-300">Home</a>
+                    <a href="About-Us.html"
+                        class="font-roboto text-xl hover:text-soft-teal hover:underline transition-colors duration-300">About</a>
+                    <a href="Course.html"
+                        class="font-roboto text-xl hover:text-soft-teal hover:underline transition-colors duration-300">Courses</a>
+                    <a href="Topper.html"
+                        class="font-roboto text-xl hover:text-soft-teal hover:underline transition-colors duration-300">Results</a>
+                    <button onclick="openAdmissionModal()"
+                        class="font-roboto text-xl hover:text-soft-teal hover:underline transition-colors duration-300">Admission</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden pb-4 hidden">
+                <a href="R.S.C.HTML"
+                    class="block py-2 font-roboto text-base hover:text-soft-teal transition-colors duration-300">Home</a>
+                <a href="About-Us.html"
+                    class="block py-2 font-roboto text-base hover:text-soft-teal transition-colors duration-300">About</a>
+                <a href="Course.html"
+                    class="block py-2 font-roboto text-base hover:text-soft-teal transition-colors duration-300">Courses</a>
+                <a href="Course.html"
+                    class="block py-2 font-roboto text-base hover:text-soft-teal transition-colors duration-300">Results</a>
+                <button onclick="openAdmissionModal()"
+                    class="block py-2 font-roboto text-base hover:text-soft-teal transition-colors duration-300 text-left">Admission</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 px-4 bg-light-gray">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-poppins font-semibold text-4xl text-deep-blue mb-6">Our Courses</h2>
+                <p class="font-roboto text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive educational programs designed to help students excel in their academic journey
+                </p>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterCourses('all')"
+                    class="filter-btn active px-6 py-2 rounded-full font-roboto text-sm transition-all bg-soft-teal text-white">All</button>
+                <button onclick="filterCourses('ssc')"
+                    class="filter-btn px-6 py-2 rounded-full font-roboto text-sm transition-all bg-gray-200 text-gray-700 hover:bg-gray-300">SSC</button>
+                <button onclick="filterCourses('hsc')"
+                    class="filter-btn px-6 py-2 rounded-full font-roboto text-sm transition-all bg-gray-200 text-gray-700 hover:bg-gray-300">HSC</button>
+                <button onclick="filterCourses('commerce')"
+                    class="filter-btn px-6 py-2 rounded-full font-roboto text-sm transition-all bg-gray-200 text-gray-700 hover:bg-gray-300">Commerce</button>
+                <button onclick="filterCourses('competitive')"
+                    class="filter-btn px-6 py-2 rounded-full font-roboto text-sm transition-all bg-gray-200 text-gray-700 hover:bg-gray-300">Competitive</button>
+            </div>
+
+            <!-- Courses Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="course-card bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
+                    data-category="ssc">
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">SSC</span>
+                            <span
+                                class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">Science</span>
+                        </div>
+                        <h3 class="font-poppins font-semibold text-2xl text-deep-blue mb-3">SSC Science Foundation</h3>
+                        <p class="font-roboto text-base text-gray-600 mb-4 leading-relaxed">Comprehensive preparation
+                            for Grade 9-10 Science subjects including Physics, Chemistry, Biology, and Mathematics.</p>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Duration: 10 months</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5S12 9.67 12 10.5V18h2v-4h3v4h2V9.5c0-1.93-1.57-3.5-3.5-3.5S12 7.57 12 9.5V18H4z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Batch Size: 12-15 students</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Price: ₹15,000/year</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openAdmissionModal()"
+                            class="w-full bg-bright-orange text-white font-poppins font-medium text-base py-3 rounded-lg hover:bg-orange-600 transition-colors duration-300">Apply
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Course 2 -->
+                <div class="course-card bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
+                    data-category="hsc">
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">HSC</span>
+                            <span
+                                class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">Science</span>
+                        </div>
+                        <h3 class="font-poppins font-semibold text-2xl text-deep-blue mb-3">HSC Science Complete</h3>
+                        <p class="font-roboto text-base text-gray-600 mb-4 leading-relaxed">Advanced coaching for Grade
+                            11-12 Science stream with focus on board exams and competitive preparation.</p>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Duration: 2 years</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5S12 9.67 12 10.5V18h2v-4h3v4h2V9.5c0-1.93-1.57-3.5-3.5-3.5S12 7.57 12 9.5V18H4z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Batch Size: 10-12 students</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Price: ₹25,000/year</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openAdmissionModal()"
+                            class="w-full bg-bright-orange text-white font-poppins font-medium text-base py-3 rounded-lg hover:bg-orange-600 transition-colors duration-300">Apply
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Course 3 -->
+                <div class="course-card bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
+                    data-category="commerce">
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">Commerce</span>
+                            <span
+                                class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">Accounts</span>
+                        </div>
+                        <h3 class="font-poppins font-semibold text-2xl text-deep-blue mb-3">Commerce Mastery</h3>
+                        <p class="font-roboto text-base text-gray-600 mb-4 leading-relaxed">Complete commerce education
+                            covering Accounts, Economics, Business Studies, and Mathematics.</p>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Duration: 2 years</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5S12 9.67 12 10.5V18h2v-4h3v4h2V9.5c0-1.93-1.57-3.5-3.5-3.5S12 7.57 12 9.5V18H4z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Batch Size: 15 students</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Price: ₹20,000/year</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openAdmissionModal()"
+                            class="w-full bg-bright-orange text-white font-poppins font-medium text-base py-3 rounded-lg hover:bg-orange-600 transition-colors duration-300">Apply
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Course 4 -->
+                <div class="course-card bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
+                    data-category="competitive">
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">NEET</span>
+                            <span
+                                class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">Medical</span>
+                        </div>
+                        <h3 class="font-poppins font-semibold text-2xl text-deep-blue mb-3">NEET Preparation</h3>
+                        <p class="font-roboto text-base text-gray-600 mb-4 leading-relaxed">Intensive coaching for NEET
+                            medical entrance exam with focus on Physics, Chemistry, and Biology.</p>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Duration: 2 years</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5S12 9.67 12 10.5V18h2v-4h3v4h2V9.5c0-1.93-1.57-3.5-3.5-3.5S12 7.57 12 9.5V18H4z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Batch Size: 8-10 students</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Price: ₹35,000/year</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openAdmissionModal()"
+                            class="w-full bg-bright-orange text-white font-poppins font-medium text-base py-3 rounded-lg hover:bg-orange-600 transition-colors duration-300">Apply
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Course 5 -->
+                <div class="course-card bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
+                    data-category="competitive">
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">JEE</span>
+                            <span
+                                class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">Engineering</span>
+                        </div>
+                        <h3 class="font-poppins font-semibold text-2xl text-deep-blue mb-3">JEE Foundation</h3>
+                        <p class="font-roboto text-base text-gray-600 mb-4 leading-relaxed">Early preparation for JEE
+                            Main and Advanced with strong foundation in PCM subjects.</p>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Duration: 2 years</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5S12 9.67 12 10.5V18h2v-4h3v4h2V9.5c0-1.93-1.57-3.5-3.5-3.5S12 7.57 12 9.5V18H4z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Batch Size: 8-10 students</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Price: ₹30,000/year</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openAdmissionModal()"
+                            class="w-full bg-bright-orange text-white font-poppins font-medium text-base py-3 rounded-lg hover:bg-orange-600 transition-colors duration-300">Apply
+                            Now</button>
+                    </div>
+                </div>
+
+                <!-- Course 6 -->
+                <div class="course-card bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden"
+                    data-category="language">
+                    <div class="p-6">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">English</span>
+                            <span
+                                class="px-3 py-1 bg-soft-teal text-white text-sm font-roboto rounded-full">Communication</span>
+                        </div>
+                        <h3 class="font-poppins font-semibold text-2xl text-deep-blue mb-3">English Communication</h3>
+                        <p class="font-roboto text-base text-gray-600 mb-4 leading-relaxed">Improve English language
+                            skills with focus on grammar, vocabulary, and communication.</p>
+
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.2 14.2L11 13V7h1.5v5.2l4.5 2.7-.8 1.3z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Duration: 6 months</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-4h3v4h2v-7.5c0-.83.67-1.5 1.5-1.5S12 9.67 12 10.5V18h2v-4h3v4h2V9.5c0-1.93-1.57-3.5-3.5-3.5S12 7.57 12 9.5V18H4z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Batch Size: 10-12 students</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                                <span class="font-roboto text-sm text-gray-700">Price: ₹8,000/course</span>
+                            </div>
+                        </div>
+
+                        <button onclick="openAdmissionModal()"
+                            class="w-full bg-bright-orange text-white font-poppins font-medium text-base py-3 rounded-lg hover:bg-orange-600 transition-colors duration-300">Apply
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 bg-deep-blue text-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="font-poppins font-semibold text-4xl mb-4">Ready to Start Your Journey?</h2>
+            <p class="font-roboto text-xl mb-8 max-w-2xl mx-auto">
+                Join hundreds of successful students who have achieved their academic goals with us.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="openAdmissionModal()"
+                    class="bg-bright-orange text-white font-poppins font-medium text-lg px-8 py-4 rounded-lg hover:bg-orange-600 transition-colors duration-300">
+                    Start Your Journey Today
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deep-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="font-poppins font-semibold text-xl mb-4">Raising Sun Group</h3>
+                    <p class="font-roboto text-sm mb-4 leading-relaxed">
+                        Expert coaching in Science & Commerce for Grade 9-12. Unlock your academic potential with our
+                        experienced faculty.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-poppins font-medium text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="R.S.C.HTML"
+                                class="font-roboto text-sm hover:text-soft-teal transition-colors">Home</a>
+                        </li>
+                        <li><a href="About-Us.html"
+                                class="font-roboto text-sm hover:text-soft-teal transition-colors">About</a></li>
+                        <li><a href="Course.html"
+                                class="font-roboto text-sm hover:text-soft-teal transition-colors">Courses</a></li>
+                        <li><a href="Topper.html"
+                                class="font-roboto text-sm hover:text-soft-teal transition-colors">Results</a></li>
+                        <li><button onclick="openAdmissionModal()"
+                                class="font-roboto text-sm hover:text-soft-teal transition-colors text-left">Admission</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-poppins font-medium text-lg mb-4">Contact Us</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                            </svg>
+                            <span class="font-roboto text-sm">+91 72763 17065</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            <span class="font-roboto text-sm">info@risingsungroup.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="h-4 w-4 text-soft-teal" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <span class="font-roboto text-sm">Ambernath (W) Thane, Maharashtra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h4 class="font-poppins font-medium text-lg mb-4">Follow Us</h4>
+                    <div class=" space-x-4 text-2xl">
+                        <ul class="flex">
+                            <li class="h-6 w-8 hover:text-soft-teal cursor-pointer transition-colors"><a target="_blank"
+                                    href="https://www.instagram.com/risingsungrouptuition?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i
+                                        class="ri-instagram-fill"></i></a></li>
+                            <li class="h-6 w-8 hover:text-soft-teal cursor-pointer transition-colors"><i
+                                    class="ri-facebook-circle-fill"></i></li>
+                            <li class="h-6 w-8 hover:text-soft-teal cursor-pointer transition-colors"><i
+                                    class="ri-twitter-x-fill"></i></li>
+                            <li class="h-6 w-8 hover:text-soft-teal cursor-pointer transition-colors"><i
+                                    class="ri-youtube-fill"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center">
+                <p class="font-roboto text-sm">© 2025 Raising Sun Group Tuition. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admission Modal -->
+    <div class="hidden" id="admission-modal">
+        <div class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="font-poppins font-semibold text-2xl text-deep-blue">Apply Now / Request Info</h2>
+                        <button onclick="closeAdmissionModal()" class="text-gray-500 hover:text-gray-700">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div id="form-container">
+                        <form id="admission-form" class="space-y-4" method="post" action="../PHP/Admission.php">
+                            <div>
+                                <label class="block font-roboto text-base text-gray-800 mb-2">Full Name *</label>
+                                <input type="text" name="fullName" required
+                                    class="w-full p-3 border border-gray-300 rounded font-roboto text-base focus:outline-none focus:ring-2 focus:ring-soft-teal focus:border-soft-teal">
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block font-roboto text-base text-gray-800 mb-2">Email *</label>
+                                    <input type="email" name="email" required
+                                        class="w-full p-3 border border-gray-300 rounded font-roboto text-base focus:outline-none focus:ring-2 focus:ring-soft-teal focus:border-soft-teal">
+                                </div>
+                                <div>
+                                    <label class="block font-roboto text-base text-gray-800 mb-2">Phone *</label>
+                                    <input type="tel" name="phone" required
+                                        class="w-full p-3 border border-gray-300 rounded font-roboto text-base focus:outline-none focus:ring-2 focus:ring-soft-teal focus:border-soft-teal">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block font-roboto text-base text-gray-800 mb-2">Grade Applying For
+                                        *</label>
+                                    <select name="grade" required
+                                        class="w-full p-3 border border-gray-300 rounded font-roboto text-base focus:outline-none focus:ring-2 focus:ring-soft-teal focus:border-soft-teal">
+                                        <option value="">Select Grade</option>
+                                        <option value="9">Grade 6</option>
+                                        <option value="9">Grade 7</option>
+                                        <option value="9">Grade 8</option>
+                                        <option value="9">Grade 9</option>
+                                        <option value="10">Grade 10</option>
+                                        <option value="11">Grade 11</option>
+                                        <option value="12">Grade 12</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block font-roboto text-base text-gray-800 mb-2">Course *</label>
+                                    <select name="course" required
+                                        class="w-full p-3 border border-gray-300 rounded font-roboto text-base focus:outline-none focus:ring-2 focus:ring-soft-teal focus:border-soft-teal">
+                                        <option value="">Select Course</option>
+                                        <option value="commerce">Commerce</option>
+                                        <option value="science">Science</option>
+                                        <option value="jee">JEE Preparation</option>
+                                        <option value="neet">NEET Preparation</option>
+                                        <option value="jee">None Of The Above</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- <div>
+                            <label class="block font-roboto text-base text-gray-800 mb-2">Preferred Batch</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="batch" value="morning"
+                                        class="mr-2 text-soft-teal focus:ring-soft-teal">
+                                    <span class="font-roboto text-base">Morning (8:00 AM - 10:00 AM)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="batch" value="afternoon"
+                                        class="mr-2 text-soft-teal focus:ring-soft-teal">
+                                    <span class="font-roboto text-base">Afternoon (2:00 PM - 4:00 PM)</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="batch" value="evening"
+                                        class="mr-2 text-soft-teal focus:ring-soft-teal">
+                                    <span class="font-roboto text-base">Evening (6:00 PM - 8:00 PM)</span>
+                                </label>
+                            </div>
+                        </div> -->
+
+                            <div>
+                                <label class="block font-roboto text-base text-gray-800 mb-2">Message</label>
+                                <textarea name="message" rows="4"
+                                    class="w-full p-3 border border-gray-300 rounded font-roboto text-base focus:outline-none focus:ring-2 focus:ring-soft-teal focus:border-soft-teal resize-none"
+                                    placeholder="Any additional information or questions..."></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-bright-orange text-white font-poppins font-medium text-lg py-3 rounded-lg hover:bg-orange-600 transition-colors">
+                                Submit Application
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="success-message" class="text-center py-8 hidden">
+                        <div class="text-green-600 font-poppins text-lg mb-2">Thank you! We'll contact you shortly.
+                        </div>
+                        <p class="font-roboto text-gray-600">Your application has been submitted successfully.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/mobile_togglt.js"></script>
+    <script src="../JS/course_filtering.js"></script>
+    <script src="../JS/admission.js"></script>
+
+</body>
+
+</html>
